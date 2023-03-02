@@ -1,21 +1,41 @@
 {% extends "layout.html" %}
 
-{% block heading %} 
-    <h1 align="center">Bell Careers</h1>
-    <img id="banner" src="{{url_for('static', filename='/images/career3.avif')}}" alt="" >
+{% block heading %}
+<img id="banner" src="{{url_for('static', filename='/images/career5.avif')}}" alt="">
 {% endblock %}
 
-{% block body %} 
-    <h2 align="center">About Bell</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi omnis iure quasi, eum mollitia voluptatibus harum unde laudantium? Suscipit qui maxime at iure maiores eveniet molestias repellendus nihil voluptatum ab!</p>
+{% block body %}
+<h2 align="center">{{company_name}} Careers</h2>
+
+<br>
+
+<div class="row">
+    <div class="col-md-6">
+        <p class="lead">A leading digital and social game publisher, Bell® has established itself as one of the top innovators in its field since 2000. 
+            Bell creates games for all digital platforms and with an audience of 157 million monthly users offers via Bell Advertising Solutions a unique level of visibility and involvement to advertisers. 
+            Bell distributes its games in over 100 countries and employs 6,000 people worldwide. Bell is a Vivendi company.
+        </p>
+    </div>
+    <div class="d-none d-md-block col-md-6">
+        <img id="side" src="{{url_for('static', filename='/images/side_image.avif')}}" alt="">
+    </div>
+</div>
+
 {% endblock %}
 
-{% block open_position %} 
-<h2 align="center">Open Positions</h2>
+{% block open_position %}
+<h2 align="center">Jobs Opening</h2>
 
-<p>TODO - show the jobs here</p>
+<p>
+<div>
+    {% for job in jobs %}
+    {% include 'job_item.html'%}
+    {% endfor %}
+</div>
+
+</p>
 <div style="text-align: center;">
-    <button>Contact Us</button>
+    <a href="mailto:sumitluitel42@gmail.com" class="btn btn-primary">Contact Us</a>
     <br>
     <br>
     <p>Copyright 2023, Bell</p>
